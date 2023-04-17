@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <?php
+include_once __DIR__ . '/Models/Category.php';
+include_once __DIR__ . '/Models/Products.php';
 //include all products
 require_once __DIR__ . '/Models/Partials/Accessories.php';
 require_once __DIR__ . '/Models/Partials/Food.php';
 require_once __DIR__ . '/Models/Partials/Toys.php';
 
 //create animal categories
-
 $cat = new Category('cat');
-var_dump($cat);
+$dog = new Category('dog');
+$bird = new Category('bird');
+$fish = new Category('fish');
+
 ?>
 <html lang="en">
 

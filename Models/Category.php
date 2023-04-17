@@ -4,6 +4,7 @@ class Category
 {
 
     public $animal;
+    public $icon;
 
     /**
      * __construct
@@ -14,14 +15,14 @@ class Category
     public function __construct(string $_name)
     {
         $this->animal = $_name;
-        $this->get_fa($_name);
+        $this->icon = $this->get_fa($_name);
     }
 
     /**
      * get_fa
      *
-     * @param  mixed $_name
-     * @return void
+     * @param  string $_name
+     * @return string
      */
     public function get_fa($_name)
     {
@@ -39,6 +40,8 @@ class Category
             case 'bird':
                 $string_animal = '<i class="fa-solid fa-dove"></i>';
                 break;
+            default:
+                $string_animal = 'All';
         }
         return $string_animal;
     }
