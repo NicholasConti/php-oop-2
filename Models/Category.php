@@ -5,12 +5,24 @@ class Category
 
     public $animal;
 
+    /**
+     * __construct
+     *
+     * @param  string $_name
+     * @return font-awesome
+     */
     public function __construct(string $_name)
     {
         $this->animal = $_name;
         $this->get_fa($_name);
     }
 
+    /**
+     * get_fa
+     *
+     * @param  mixed $animal
+     * @return void
+     */
     public function get_fa($animal)
     {
         switch (strtolower($animal)) {
