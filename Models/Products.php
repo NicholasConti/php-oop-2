@@ -7,10 +7,10 @@ require_once __DIR__ . '/Category.php';
 class Products
 {
     private $id;
-    private $name;
-    private $price;
-    private $image;
-    private $pet;
+    public $name;
+    public $price;
+    public $image;
+    public $pet;
 
     public function __construct(string $_id, string $_name, int $_price, string $_img, Category $_animal)
     {

@@ -3,7 +3,7 @@
 require_once __DIR__ . '/../Products.php';
 class Toys extends Products
 {
-    private $specs;
+    public $specs;
 
     /**
      * __construct
