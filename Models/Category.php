@@ -20,24 +20,26 @@ class Category
     /**
      * get_fa
      *
-     * @param  mixed $animal
+     * @param  mixed $_name
      * @return void
      */
-    public function get_fa($animal)
+    public function get_fa($_name)
     {
-        switch (strtolower($animal)) {
+        $string_animal = '';
+        switch (strtolower($_name)) {
             case 'dog':
-                return '<i class="fa-solid fa-dog"></i>';
+                $string_animal = '<i class="fa-solid fa-dog"></i>';
                 break;
             case 'cat':
-                return '<i class="fa-solid fa-cat"></i>';
+                $string_animal = '<i class="fa-solid fa-cat"></i>';
                 break;
             case 'fish':
-                return '<i class="fa-solid fa-fish-fins"></i>';
+                $string_animal = '<i class="fa-solid fa-fish-fins"></i>';
                 break;
             case 'bird':
-                return '<i class="fa-solid fa-dove"></i>';
+                $string_animal = '<i class="fa-solid fa-dove"></i>';
                 break;
         }
+        return $string_animal;
     }
 }

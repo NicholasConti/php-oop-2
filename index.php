@@ -1,4 +1,15 @@
 <!DOCTYPE html>
+<?php
+//include all products
+require_once __DIR__ . '/Models/Partials/Accessories.php';
+require_once __DIR__ . '/Models/Partials/Food.php';
+require_once __DIR__ . '/Models/Partials/Toys.php';
+
+//create animal categories
+
+$cat = new Category('cat');
+var_dump($cat);
+?>
 <html lang="en">
 
 <head>
