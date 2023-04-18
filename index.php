@@ -56,7 +56,7 @@ $prd_list = [$royal_canin, $almo_naturer, $voliera, $acquario, $osso, $topo, $ca
                         <div class="card" style="width: 18rem;">
                             <img src=<?php echo $prd->get_img() ?> class="card-img-top ">
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item"><?php echo $prd->get_category()->get_icon() . ' ' . $prd->get_category()->get_animal() ?></li>
+                                <li class="list-group-item"><?php echo $prd->get_category()->get_icon() . ' ' . $prd->get_category()->get_name() ?></li>
                                 <li class="list-group-item"><?php echo $prd->get_name()  ?></li>
                                 <li class="list-group-item"><?php echo $prd->get_price() . '£'  ?></li>
                                 <?php if (method_exists($prd, 'get_specs')) : ?>

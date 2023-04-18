@@ -1,9 +1,8 @@
 <?php
-
+require_once __DIR__ . '/../Traits/Name.php';
 class Category
 {
-
-    private $animal;
+    use Name;
     private $icon;
 
     /**
@@ -14,7 +13,7 @@ class Category
      */
     public function __construct(string $_name)
     {
-        $this->animal = $_name;
+        $this->name = $_name;
         $this->icon = $this->get_fa($_name);
     }
 
@@ -46,14 +45,6 @@ class Category
         return $string_animal;
     }
 
-    public function get_animal()
-    {
-        return $this->animal;
-    }
-    public function set_animal($_name)
-    {
-        return $this->animal = $_name;
-    }
 
     public function get_icon()
     {

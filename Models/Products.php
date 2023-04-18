@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/../Traits/Name.php';
 require_once __DIR__ . '/Category.php';
 
 /**
@@ -6,8 +7,8 @@ require_once __DIR__ . '/Category.php';
  */
 class Products
 {
+    use Name;
     private $id;
-    private $name;
     private $price;
     private $image;
     private $pet;
@@ -19,15 +20,6 @@ class Products
         $this->price = $_price;
         $this->image = $_img;
         $this->pet = $_animal;
-    }
-
-    public function get_name()
-    {
-        return $this->name;
-    }
-    public function set_name($_name)
-    {
-        return $this->name = $_name;
     }
 
 
