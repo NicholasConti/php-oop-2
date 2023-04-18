@@ -3,8 +3,8 @@
 class Category
 {
 
-    public $animal;
-    public $icon;
+    private $animal;
+    private $icon;
 
     /**
      * __construct
@@ -44,5 +44,19 @@ class Category
                 $string_animal = 'All';
         }
         return $string_animal;
+    }
+
+    public function get_animal()
+    {
+        return $this->animal;
+    }
+    public function set_animal($_name)
+    {
+        return $this->animal = $_name;
+    }
+
+    public function get_icon()
+    {
+        return $this->icon;
     }
 }

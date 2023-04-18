@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <?php
+require_once __DIR__ . '/Models/Category.php';
 //include all products
 require_once __DIR__ . '/Models/Partials/Accessories.php';
 require_once __DIR__ . '/Models/Partials/Food.php';
@@ -50,21 +51,26 @@ $prd_list = [$royal_canin, $almo_naturer, $voliera, $acquario, $osso, $topo, $ca
                 <?php foreach ($prd_list as $prd) : ?>
                     <!-- <?php
                             var_dump($prd);
-
                             ?> -->
                     <div class="col-4">
                         <div class="card" style="width: 18rem;">
-                            <img src=<?php echo $prd->image ?> class="card-img-top ">
+                            <img src=<?php echo $prd->get_img() ?> class="card-img-top ">
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item"><?php echo $prd->pet->icon . ' ' . $prd->pet->animal ?></li>
+                                <li class="list-group-item"><?php echo $prd->get_category()->get_icon() . ' ' . $prd->get_category()->get_animal() ?></li>
+                                <li class="list-group-item"><?php echo $prd->get_name()  ?></li>
+                                <li class="list-group-item"><?php echo $prd->get_price() . '£'  ?></li>
+                                <?php if (method_exists($prd, 'get_specs')) : ?>
+                                    <li class="list-group-item"><?php echo $prd->get_specs() ?></li>
 
-                                <?php foreach ($prd as $key => $value) : ?>
-                                    <?php if (($key !== 'image') && ($key !== 'pet')) : ?>
-                                        <li class="list-group-item"><?php echo $value ?></li>
-                                    <?php endif ?>
+                                <?php endif; ?>
+                                <?php if (method_exists($prd, 'get_materials')) : ?>
+                                    <li class="list-group-item"><?php echo $prd->get_materials() ?></li>
 
-                                <?php endforeach ?>
+                                <?php endif; ?>
+                                <?php if (method_exists($prd, 'get_grams')) : ?>
+                                    <li class="list-group-item"><?php echo $prd->get_grams() ?></li>
 
+                                <?php endif; ?>
                             </ul>
                         </div>
                     </div>

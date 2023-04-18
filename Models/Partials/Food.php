@@ -3,7 +3,7 @@
 require_once __DIR__ . '/../Products.php';
 class Food extends Products
 {
-    public $grams;
+    private $grams;
 
     /**
      * __construct
@@ -20,5 +20,14 @@ class Food extends Products
     {
         parent::__construct($_id,  $_name,  $_price,  $_img,  $_animal);
         $this->grams = $_gr;
+    }
+
+    public function get_grams()
+    {
+        return $this->grams;
+    }
+    public function set_grams($_gr)
+    {
+        return $this->grams = $_gr;
     }
 }

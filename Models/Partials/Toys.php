@@ -21,4 +21,13 @@ class Toys extends Products
         parent::__construct($_id,  $_name,  $_price,  $_img,  $_animal);
         $this->specs = $_specs;
     }
+
+    public function get_specs()
+    {
+        return $this->specs;
+    }
+    public function set_specs($_specs)
+    {
+        return $this->specs = $_specs;
+    }
 }

@@ -3,7 +3,7 @@
 require_once __DIR__ . '/../Products.php';
 class Accessories extends Products
 {
-    public $materials;
+    private $materials;
 
     /**
      * __construct
@@ -20,5 +20,14 @@ class Accessories extends Products
     {
         parent::__construct($_id,  $_name,  $_price,  $_img,  $_animal);
         $this->materials = $mat;
+    }
+
+    public function get_materials()
+    {
+        return $this->materials;
+    }
+    public function set_materialss($mat)
+    {
+        return $this->materials = $mat;
     }
 }
