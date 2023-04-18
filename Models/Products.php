@@ -17,7 +17,7 @@ class Products
     {
         $this->id = $_id;
         $this->name = $_name;
-        $this->price = $_price;
+        $this->set_price($_price);
         $this->image = $_img;
         $this->pet = $_animal;
     }
@@ -29,7 +29,10 @@ class Products
     }
     public function set_price($_price)
     {
-        return $this->price = $_price;
+        if ($_price <= 0 && !is_float($_price)) {
+            throw new Exception('Il prezzo non ha un formato corretto!');
+        }
+        $this->price = $_price;
     }
 
 

@@ -13,19 +13,25 @@ $bird = new Category('bird');
 $fish = new Category('fish');
 
 // create products
+try {
+    $royal_canin = new Food('01', 'Royal Canin Adult', 44, 'img/royal.jpg', $dog, 500);
+    $almo_naturer = new Food('02', 'almo Nature Holistic', 45, 'img/almo.jpg', $cat, 70);
+    $voliera = new Accessories('03', 'Voliera Wilma', 185, 'img/voliera.webp', $bird, 'Legno');
+    $acquario = new Accessories('04', 'Acquario Oase', 1900, 'img/acquario.png', $fish, "Vetro , Acciaio");
+    $osso = new Toys('05', 'Osso Giocattolo', 12, 'img/osso.jpg', $dog, 'Rimbalza');
+    $topo = new Toys('06', 'Topo giocattolo', 8, 'img/topo.png', $cat, 'Peoloso');
+    $cartucce = new Accessories('07', 'Cartucce filtro acquario', 5, 'img/filtro.jpg', $fish, 'Plastica');
+    $mangime = new Food('08', 'Mangime Vitakraft', 18, 'img/mangime.jpg', $bird, 500);
 
-$royal_canin = new Food('01', 'Royal Canin Adult', 44, 'img/royal.jpg', $dog, 500);
-$almo_naturer = new Food('02', 'almo Nature Holistic', 45, 'img/almo.jpg', $cat, 70);
-$voliera = new Accessories('03', 'Voliera Wilma', 185, 'img/voliera.webp', $bird, 'Legno');
-$acquario = new Accessories('04', 'Acquario Oase', 1900, 'img/acquario.png', $fish, "Vetro , Acciaio");
-$osso = new Toys('05', 'Osso Giocattolo', 12, 'img/osso.jpg', $dog, 'Rimbalza');
-$topo = new Toys('06', 'Topo giocattolo', 8, 'img/topo.png', $cat, 'Peoloso');
-$cartucce = new Accessories('07', 'Cartucce filtro acquario', 5, 'img/filtro.jpg', $fish, 'Plastica');
-$mangime = new Food('08', 'Mangime Vitakraft', 18, 'img/mangime.jpg', $bird, 500);
+    $prd_list = [$royal_canin, $almo_naturer, $voliera, $acquario, $osso, $topo, $cartucce, $mangime];
+    //var_dump($prd_list);
+} catch (Exception $e) {
+    echo $e->getMessage();
+    die;
+}
 
 
-$prd_list = [$royal_canin, $almo_naturer, $voliera, $acquario, $osso, $topo, $cartucce, $mangime];
-//var_dump($prd_list);
+
 
 
 ?>
@@ -43,6 +49,7 @@ $prd_list = [$royal_canin, $almo_naturer, $voliera, $acquario, $osso, $topo, $ca
 </head>
 
 <body>
+
     <div class="container-xl">
         <h1>Products:</h1>
         <div class="container-fluid p-0">
@@ -78,6 +85,7 @@ $prd_list = [$royal_canin, $almo_naturer, $voliera, $acquario, $osso, $topo, $ca
             </div>
         </div>
     </div>
+
 </body>
 
 </html>
